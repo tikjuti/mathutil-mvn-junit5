@@ -2,6 +2,6 @@
 
 ### Screenshorts
 
-![DDT & TDD with Junit](https://github.com/tikjuti/math-util/blob/main/images/DDT-JUnit.png)
+![DDT & TDD with Junit](https://github.com/tikjuti/mathutil-mvn-junit5/blob/main/images/DDT-Junit5.png)
 
 #### © 2023 tikjuti.

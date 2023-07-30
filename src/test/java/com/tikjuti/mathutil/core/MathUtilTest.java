@@ -21,7 +21,7 @@ public class MathUtilTest {
             {2, 2},
             {3, 6},
             {4, 24},
-            {6, 120},
+            {5, 120},
         };
     }
     @ParameterizedTest
