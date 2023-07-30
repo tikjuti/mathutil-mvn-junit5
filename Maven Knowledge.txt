@@ -1,0 +1,62 @@
+MAVEN: nghĩa gã pro, chuyên gia
+MAVEN chủ yếu chơi với Java
+MAVEN là gì?
+- là 1 build-tool, công cụ giúp ta đóng gói app thành file .jav, .war
+tức là biến source code - .java, .html, .jsp thành h file "nhị phân" - byte code -> .jar .war.apk
+
+- Nếu không sài MAVEN ta có thể sài các công cụ khác
+Build-tool khác : ví dụ ANT, GRADLE, IVY...
+Hoặc chủ động xài các tool cung cấp sẵn trong thư mục JDK\BIN - rất mệt mỏi vì manual bằng tay nhiều
+
+- Build-tool: là phần mềm trợ giúp dân dev biên dịch source code và đóng gói app để đem đi cho user xài.
+
+-Vì tool khác nhau, nên hành trình để ra đc .jav .war là khác nhau, đích đến là như nhau
+
+.java
+.jsp   ----------------> .class ----------------> .war .jar
+			MAVEN, ANT,..		target/goal/đích
+
+- MAVEN, ANT là 2 style tổ chức các tài nguyên của dự án/ project
+	     là 2 style bố trí các source code của dự án Java (viết code là giống nhau)
+	     khác nhau ở cách lưu code ở đâu, thư mục nào
+	     khác nhau ở cách lưu các thư viện ta xài thêm ở đâu
+
+- Làm project/app ngoài việc viết code còn 1 việc cực kì quan trọng: 3rd-party library xài cho các thư viện phụ trợ từ bên ngoài .jar ví dụ jdbc.jar
+
+ANT: các thư viện bên ngoài mình add vào dự án bằng tay, .jar add bằng tay vào trong dự án
+	problem: thư viện bản thân nó cũng là code, và nó có thể xài 1 thư viện thứ 3 khác
+	nếu ta thiếu thư viện mà thư viện đang dùng phụ thuộc vào - missing thư viện ảnh 	
+	hưởng đến mức không viết code được, không đóng gói được
+	vi dụ:
+	app đang cần viết thư viện Junit(3rd-party)
+				   Jnuit lại cần thêm 1 thằng khác (.jar chuyên lo màu sắc)
+	dev phải chủ động kiểm soát đc sự phụ thuộc(dependency) cần nhau của các thư viện
+
+	
+
+MAVEN: tiếp cận vụ thư viện theo cách khác, xịn hơn:
+	-nắm tên của thằng thư viện đầu xỏ, trùm
+	- không cần tìm và download 
+	- báo với MAVEN là tao cần tên thư viện này là đủ
+	- MAVEN sẽ tự lên mạng tìm giùm mình file .jar này về
+	- nó sẽ tự tìm trong file .jar này cần thêm .jar nào khác, nó tự tìm giùm luôn, 	
+	down về dùm luôn, add giùm luôn, add giùm luôn vào project
+	MAVEN lo luôn cho mình quản lý các thư viện mình cần và đám lâu la của thư viện 	
+	mình cần  -> gọi là quản lý các DEPENDENCY
+	
+	Làm sao MAVEN làm đc điều đó?
+	1. - Cộng đồng  MAVEN đã gom toàn bộ các file .jar trên thế giới cất vào một server 	
+	trên Internet và pucblic server này cho toàn bộ cộng đồng vào download theo kiểu 	
+	ANT, ủy quyền cho MAVEN vào tự download 
+	
+	Name server : https://mvnrepository.com
+	
+	2. Khai báo thư viện mình cần - nay gọi tên là khai báo dependency mình cần theo cú
+ 	pháp quy ước trước, theo chuẩn XML, tag <> để nói điều mình muốn đặt mong ước về
+ 	thư viện/dependency mình cần vào 1 tập tin tên là POM.XML 
+	
+	3. Toàn bộ các thư viện mình khai bào để xài trong project đặt trong POM.XML và lát 
+	sau MAVEN sẽ tự lên kho tổng CENTAL DOWN về cất ở Local máy mình, ở 1 nơi mà mọi 
+	Project sau này mình tạo đều có thể xài chung. LOCAL REPO nằm ở : C:\Users\tên-mình-login\.m2
+
+
