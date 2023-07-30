@@ -1,4 +1,4 @@
-[![CI with GitHub Actions using Ant and JUnit | © 2023 by tikjuti](https://github.com/tikjuti/math-util/actions/workflows/ci-junit.yml/badge.svg)](https://github.com/tikjuti/math-util/actions/workflows/ci-junit.yml)
+[![CI with GitHub Actions using Maven and JUnit | © 2023 by tikjuti](https://github.com/tikjuti/mathutil-mvn-junit5/actions/workflows/ci-maven.yml/badge.svg)](https://github.com/tikjuti/mathutil-mvn-junit5/actions/workflows/ci-maven.yml)
 
 ### Screenshorts
 
